@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!--开发者模式-->
+    <constant name="struts.devMode" value="true"/>
+    <!--浏览器不缓存静态资源-->
+    <constant name="struts.serve.static.browserCache" value="false"/>
+
+    <package name="showPkg" extends="struts-default" namespace="/">
+        <action name="*_*" class="{1}Action" method="{2}">
+            <result name="list">/WEB-INF/view/list.jsp</result>
+            <result name="invitation">/WEB-INF/view/invitation.jsp</result>
+        </action>
+    </package>
+
+</struts>

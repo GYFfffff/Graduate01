@@ -1,0 +1,5 @@
+
+    <bean id="${objName}Action" class="${basePkg}.action.${className}Action" scope="prototype">
+        <property name="service" ref="${objName}Service"/>
+    </bean>
+    

@@ -1,0 +1,4 @@
+
+	<bean id="${objName}Service" class="${basePkg}.service.impl.${className}ServiceImpl">
+		<property name="dao" ref="${objName}Dao"/>
+	</bean>

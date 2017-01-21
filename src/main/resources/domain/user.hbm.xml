@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gyf.graduate.domain.User">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+        <property name="userName" unique="true"/>
+        <property name="email" unique="true"/>
+        <property name="phoneNumber" unique="true"/>
+
+        <property name="password" not-null="true"/>
+        <property name="isAdmin"/>
+
+        <bag name="roles">
+            <key column="user_id"/>
+            <many-to-many class="com.gyf.graduate.domain.Role" column="role_id"/>
+        </bag>
+        <bag name="appearInvitations" inverse="true">
+            <key column="user_id"/>
+            <one-to-many class="com.gyf.graduate.domain.Invitation"/>
+        </bag>
+        <bag name="attentionInvitations" inverse="true">
+            <key column="user_id"/>
+            <many-to-many class="com.gyf.graduate.domain.Invitation" column="invitation_id"/>
+        </bag>
+        <bag name="comments" inverse="true">
+            <key column="user_id"/>
+            <one-to-many class="com.gyf.graduate.domain.Comment"/>
+        </bag>
+
+    </class>
+</hibernate-mapping>

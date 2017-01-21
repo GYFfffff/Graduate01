@@ -1,0 +1,9 @@
+@charset "GB2312";
+/* CSS Document */
+#oneBlock{position:fixed;
+		left:0;
+		padding:20px;
+		width:130px;
+		height:500px;
+		background-color:#06F;
+}
